@@ -1,5 +1,5 @@
 # Pydantic-SQLAlchemy
-
+Run models.py, not main.py
 <a href="https://github.com/tiangolo/pydantic-sqlalchemy/actions?query=workflow%3ATest" target="_blank">
     <img src="https://github.com/tiangolo/pydantic-sqlalchemy/workflows/Test/badge.svg" alt="Test">
 </a>
