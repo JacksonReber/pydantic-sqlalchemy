@@ -17,7 +17,7 @@ def Load_Data(file_name):
 
 
 Base = declarative_base()
-"""
+
 DB_NAME = 'postgres'
 DB_USER = 'postgres'
 DB_PASSWORD = 'changeme'
@@ -167,7 +167,7 @@ LocalSession = sessionmaker(bind=engine)
 db: Session = LocalSession()
 
 
-'''
+
 with open("ops/init_location_dim.sql", "r") as sql_file:
     escaped_sql = text(sql_file.read())
     db.execute(escaped_sql)
@@ -183,7 +183,7 @@ with open("ops/init_flight_dim.sql", "r") as sql_file:
 with open("ops/init_fact_flights.sql", "r") as sql_file:
     escaped_sql = text(sql_file.read())
     db.execute(escaped_sql)
-'''
+
 
 def add_unique_service(
         seen_services,
@@ -229,8 +229,8 @@ def add_unique_location(
         locations.append(LocationDim(**location_schema.dict()))
 
 
-#df = pd.read_csv('./ops/flights.csv')
-#df.to_sql(con=engine, index_label='vwf_id', name=SuperStore.__tablename__, if_exists='replace')
+df = pd.read_csv('./ops/flights.csv')
+df.to_sql(con=engine, index_label='vwf_id', name=SuperStore.__tablename__, if_exists='replace')
 
 
 def get_all():
